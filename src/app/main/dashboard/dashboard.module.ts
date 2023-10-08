@@ -1,12 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 import { RouterModule, Routes } from '@angular/router';
+import { NgApexchartsModule } from 'ng-apexcharts';
 import { SharedModule } from '../../shared-module';
 import { DashboardComponent } from './dashboard.component';
+
+// due to unusual behaviour of the hosting site, components that were declared in shared module for reuseablity, also had to import in this file
 const routes: Routes = [
   {
     path: '**',
@@ -18,9 +20,12 @@ const routes: Routes = [
     declarations: [DashboardComponent],
     imports: [
       SharedModule,
+      CommonModule,
       RouterModule.forChild(routes), 
-      MatInputModule,
-      MatButtonModule
+      MatCardModule,
+      MatButtonModule,
+      FlexLayoutModule,
+      NgApexchartsModule
     ], 
     exports: [
       RouterModule

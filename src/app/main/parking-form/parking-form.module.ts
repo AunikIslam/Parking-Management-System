@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
+// due to unusual behaviour of the hosting site, components that were declared in shared module for reuseablity, also had to import in this file
+
 const routes: Routes = [
   {
     path: '**',

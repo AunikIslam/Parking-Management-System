@@ -1,5 +1,10 @@
 <div class="parent">
-  <div class="fs-6 p-1 fw-semibold">This table represents a list of words and their cateogories</div>
+  <div fxLayout="row" fxLayoutAlign="end start" >
+    <a  routerLink="/parking-form">
+      <button color="accent" class="me-3" mat-raised-button>Add Parking</button>
+      </a>
+  </div>
+  <div class="fs-6 p-1 fw-semibold">This table represents a list of parked vehicles</div>
   <div class="datatable-container-list-view mt-3 mx-auto w-75">
     <table mat-table [dataSource]="parkingVehicles">
       <ng-container matColumnDef="OwnerName">
@@ -34,7 +39,9 @@
 
       <ng-container matColumnDef="Action">
         <th class="table-header" mat-header-cell *matHeaderCellDef>Action</th>
-        <td mat-cell *matCellDef="let row">{{ row.Status}}</td>
+        <td mat-cell *matCellDef="let row; let i = index">
+          <a [routerLink]="['/parking-form']" [queryParams]="{index: i}">Edit</a>
+        </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

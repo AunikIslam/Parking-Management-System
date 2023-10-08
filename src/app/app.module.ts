@@ -17,6 +17,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared-module';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 const routes: Routes = [
   {

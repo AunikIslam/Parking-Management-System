@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../../shared-module';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
-import { MatSelectModule } from '@angular/material/select';
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { ParkingVehicleListComponent } from './parking-vehicle-list.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+// due to unusual behaviour of the hosting site, components that were declared in shared module for reuseablity, also had to import in this file
 
 const routes: Routes = [
   {
@@ -22,7 +20,9 @@ const routes: Routes = [
     imports: [
       SharedModule,
       RouterModule.forChild(routes),
-      MatTableModule
+      FlexLayoutModule,
+      MatTableModule,
+      MatButtonModule
     ], 
     exports: [
       RouterModule

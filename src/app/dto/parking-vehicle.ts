@@ -5,10 +5,10 @@ export class ParkingVehicle {
   OwnerPhone: string = '';
   Status: string = '';
   Address: string = '';
-  CarEntryTime: string = '';
-  CarEntryDate: string = '';
-  CarExitTime: string = '';
-  CarExitDate: string = '';
+  EntryTime: string = '';
+  EntryDate: string = '';
+  ExitTime: string = '';
+  ExitDate: string = '';
   ParkingCharge: number = 0;
 
 }

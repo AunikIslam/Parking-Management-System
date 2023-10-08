@@ -1,25 +1,31 @@
 <div class="parent">
+  <div class="fs-6 p-1 fw-semibold">Add New Parking</div>
   <div fxLayout="row wrap">
-    <mat-form-field appearance="outline">
+    <mat-form-field class="mx-1" appearance="outline">
       <mat-label>License Number</mat-label>
       <input [(ngModel)]="parkingVehicle.LicenseNumber" matInput placeholder="License Number" name="LicenseNumber"/>
     </mat-form-field>
     
-    <mat-form-field appearance="outline">
+    <mat-form-field class="mx-1" appearance="outline">
       <mat-label>Vehicle Type</mat-label>
-      <mat-select [(ngModel)]="parkingVehicle.VehicleType" name="type">
+      <mat-select [(ngModel)]="parkingVehicle.VehicleType" name="type" (selectionChange)="vehicleTypeChangeListener($event)">
         <mat-option [value]="'Microbus'">Microbus</mat-option>
         <mat-option [value]="'Car'">Car</mat-option>
         <mat-option [value]="'Truck'">Truck</mat-option>
       </mat-select>
     </mat-form-field>
+
+    <mat-form-field class="mx-1" appearance="outline">
+      <mat-label>Charge</mat-label>
+      <input readonly [(ngModel)]="parkingVehicle.ParkingCharge" matInput placeholder="Charge" name="Charge"/>
+    </mat-form-field>
     
-    <mat-form-field appearance="outline">
+    <mat-form-field class="mx-1" appearance="outline">
       <mat-label>Owner Name</mat-label>
       <input [(ngModel)]="parkingVehicle.OwnerName" matInput placeholder="Owner Name" name="OwnerName"/>
     </mat-form-field>
     
-    <mat-form-field appearance="outline">
+    <mat-form-field class="mx-1" appearance="outline">
       <mat-label>Status</mat-label>
       <mat-select [(ngModel)]="parkingVehicle.Status" name="status">
         <mat-option [value]="'IN'">In</mat-option>
@@ -27,12 +33,12 @@
       </mat-select>
     </mat-form-field>
     
-    <mat-form-field appearance="outline">
+    <mat-form-field class="mx-1" appearance="outline">
       <mat-label>Address</mat-label>
       <input [(ngModel)]="parkingVehicle.Address" matInput placeholder="Address" name="Address"/>
     </mat-form-field>
 
-    <button (click)="submitParkedVehicleInfo()" type="submit" color="accent">
+    <button mat-raised-button (click)="submitParkedVehicleInfo()" type="submit" color="accent">
       <span>Submit</span>
     </button>
   </div>
