@@ -1,3 +1,40 @@
-<p>
-parking-form works!
-</p>
+<div class="parent">
+  <div fxLayout="row wrap">
+    <mat-form-field appearance="outline">
+      <mat-label>License Number</mat-label>
+      <input [(ngModel)]="parkingVehicle.LicenseNumber" matInput placeholder="License Number" name="LicenseNumber"/>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Vehicle Type</mat-label>
+      <mat-select [(ngModel)]="parkingVehicle.VehicleType" name="type">
+        <mat-option [value]="'Microbus'">Microbus</mat-option>
+        <mat-option [value]="'Car'">Car</mat-option>
+        <mat-option [value]="'Truck'">Truck</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Owner Name</mat-label>
+      <input [(ngModel)]="parkingVehicle.OwnerName" matInput placeholder="Owner Name" name="OwnerName"/>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select [(ngModel)]="parkingVehicle.Status" name="status">
+        <mat-option [value]="'IN'">In</mat-option>
+        <mat-option [value]="'OUT'">Out</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input [(ngModel)]="parkingVehicle.Address" matInput placeholder="Address" name="Address"/>
+    </mat-form-field>
+
+    <button (click)="submitParkedVehicleInfo()" type="submit" color="accent">
+      <span>Submit</span>
+    </button>
+  </div>
+
+</div>

@@ -9,10 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
 
   constructor(private router: Router) { 
-    if(window.location.href.includes('home')){
-      this.router.navigate(['home']);
-    }
-    
+    this.router.navigate(['dashboard']);
   }
 
   ngOnInit() {

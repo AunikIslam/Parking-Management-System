@@ -16,10 +16,20 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared-module';
+
 const routes: Routes = [
   {
+    path: 'dashboard',
+  loadChildren: () => import('./main/dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  {
     path: 'parking-form',
-    loadChildren: () => import('./main/parking-form/parking-form.module').then(m => m.ParkingFormModule)
+  loadChildren: () => import('./main/parking-form/parking-form.module').then(m => m.ParkingFormModule)
+  },
+  {
+    path: 'parking-vehicle-list',
+  loadChildren: () => import('./main/parking-vehicle-list/parking-vehicle-list.module').then(m => m.ParkingVehicleList)
   }
 ]
 
@@ -41,10 +51,21 @@ const routes: Routes = [
     MatButtonModule,
     MatCheckboxModule,
     RouterModule.forRoot(routes),
-    NgApexchartsModule
+    NgApexchartsModule,
+    SharedModule
   ],
   exports: [
-    RouterModule
+    MatTableModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    NgApexchartsModule
   ],
   bootstrap: [AppComponent]
 })

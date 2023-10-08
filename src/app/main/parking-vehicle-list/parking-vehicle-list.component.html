@@ -1,0 +1,43 @@
+<div class="parent">
+  <div class="fs-6 p-1 fw-semibold">This table represents a list of words and their cateogories</div>
+  <div class="datatable-container-list-view mt-3 mx-auto w-75">
+    <table mat-table [dataSource]="parkingVehicles">
+      <ng-container matColumnDef="OwnerName">
+        <th class="table-header" mat-header-cell *matHeaderCellDef>Owner Name</th>
+        <td mat-cell *matCellDef="let row">{{ row.OwnerName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="VehicleType">
+        <th class="table-header" mat-header-cell *matHeaderCellDef>Vehicle Type</th>
+        <td mat-cell *matCellDef="let row">{{ row.VehicleType }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="LicenseNo">
+        <th class="table-header" mat-header-cell *matHeaderCellDef>License No</th>
+        <td mat-cell *matCellDef="let row">{{ row.LicenseNumber}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="EntryTime">
+        <th class="table-header" mat-header-cell *matHeaderCellDef>Entry Time</th>
+        <td mat-cell *matCellDef="let row">{{ row.EntryTime}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ExitTime">
+        <th class="table-header" mat-header-cell *matHeaderCellDef>Exit Time</th>
+        <td mat-cell *matCellDef="let row">{{ row.ExitTime}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Status">
+        <th class="table-header" mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let row">{{ row.Status}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th class="table-header" mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let row">{{ row.Status}}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

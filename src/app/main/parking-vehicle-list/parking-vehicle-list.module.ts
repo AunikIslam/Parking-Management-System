@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ParkingFormComponent } from './parking-form.component';
 import { SharedModule } from '../../shared-module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
@@ -8,28 +7,25 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { ParkingVehicleListComponent } from './parking-vehicle-list.component';
 
 const routes: Routes = [
   {
     path: '**',
-    component: ParkingFormComponent
+    component: ParkingVehicleListComponent
   }
 ];
 
 @NgModule( {
-    declarations: [ParkingFormComponent ],
+    declarations: [ParkingVehicleListComponent ],
     imports: [
       SharedModule,
       RouterModule.forChild(routes),
-      FormsModule,
-      MatFormFieldModule,
-      MatSelectModule,
-      MatInputModule,
-      MatIconModule,
-      MatButtonModule
+      MatTableModule
     ], 
     exports: [
       RouterModule
     ]
 } )
-export class ParkingFormModule {}
+export class ParkingVehicleList {}
